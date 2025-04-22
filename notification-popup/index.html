@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Notification</title>
+  <style>
+    #popup {
+      display: none;
+      bottom: 20px;
+      right: 20px;
+      background-color: #444;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      font-family: Arial;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="showPopup()" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #4CAF50;"> Show Notification</button>
+
+<div id="popup"> This is a simple notification popup!</div>
+
+<script>
+  function showPopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+
+    // Hide after 3 seconds
+    setTimeout(function() {
+      popup.style.display = "none";
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Example</title>
+</head>
+<body>
+
+<h2>Set or Delete a Cookie</h2>
+
+<label for="name">Name:</label>
+<input type="text" id="name"><br><br>
+
+<label for="value">Value:</label>
+<input type="text" id="value"><br><br>
+
+<button onclick="setCookie()">Set Cookie</button>
+<button onclick="deleteCookie()">Delete Cookie</button>
+
+<script>
+function setCookie() {
+  var name = document.getElementById("name").value;
+  var value = document.getElementById("value").value;
+  if (name && value) {
+    document.cookie = name + "=" + value + "; path=/";
+    alert("Cookie set: " + name + "=" + value);
+  } else {
+    alert("Please enter both name and value.");
+  }
+}
+
+function deleteCookie() {
+  var name = document.getElementById("name").value;
+  if (name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    alert("Cookie deleted: " + name);
+  } else {
+    alert("Please enter the cookie name to delete.");
+  }
+}
+</script>
+
+</body>
+</html>
